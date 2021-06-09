@@ -1,0 +1,40 @@
+1. Задание
+----------------------------------------
+
+find_closest <- function(v, n) {
+    temp <- abs(v-n)
+    sort(c(which(temp == min(temp))))
+}
+
+----------------------------------------
+2. Задание
+----------------------------------------
+
+build_ziggurat <- function(n) {
+    x <- n * 2 - 1
+    res <- matrix(1:1, nrow = x, ncol = x) 
+    x <- n
+    y <- n
+    number <- n
+    res[x, y] <- n
+    while(x != 1) {
+        x <- x - 1
+        y <- y + 1
+        number <- number - 1
+        res[row(res) == x] <- number
+        res[row(res) == y] <- number
+        res[col(res) == x] <- number
+        res[col(res) == y] <- number        
+    }    
+    res
+}
+
+----------------------------------------
+3. Задание
+----------------------------------------
+
+count_elements <- function(x) {
+    res <- sort(unique(x))
+    res <- rbind(res, as.vector(table(x)))
+}
+

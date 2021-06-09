@@ -1,0 +1,22 @@
+1. Задание
+----------------------------------------
+
+is_monotone <- function(x) {
+    !is.unsorted(x) || !is.unsorted(rev(x))
+}
+
+----------------------------------------
+2. Задание
+----------------------------------------
+
+combin_count <- function(n, k, with_repetitions  = FALSE) {
+    if(with_repetitions == F){
+        factorial(n) / (factorial(k) * factorial(n - k))
+    } else {
+        factorial(n + k - 1) / (factorial(k) * factorial(n - 1))
+    }
+}
+
+
+
+
